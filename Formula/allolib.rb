@@ -1,7 +1,7 @@
 class Allolib < Formula
   desc "AlloSystem for OpenGL 3.3 or higher"
   homepage "https://github.com/AlloSphere-Research-Group/allolib"
-  head "https://github.com/AlloSphere-Research-Group/allolib.git"
+  head "https://github.com/akshay1992/allolib.git"
 
   depends_on "cmake" => :build
   depends_on "apr"
@@ -11,12 +11,14 @@ class Allolib < Formula
   depends_on "freetype"
   depends_on "glfw"
   depends_on "libsndfile"
+  depends_on "rt-audio"
+  depends_on "rtmidi"
   depends_on "portaudio"
 
   def install
     mkdir "build" do
       system "cmake", "..", "-DNO_EXAMPLES=1", *std_cmake_args
-      system "make", "al"
+      system "make", "al", "-j16"
       system "make", "install"
     end
 
