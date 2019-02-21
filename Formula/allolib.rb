@@ -1,7 +1,7 @@
 require 'formula'
 
 class Allolib < Formula
-  head 'https://github.com/AlloSphere-Research-Group/allolib', :branch => "devel"
+  head 'https://github.com/akshay1992/allolib', :branch => "devel"
 
   depends_on 'cmake' => :build
   depends_on 'assimp'
