@@ -1,6 +1,6 @@
 require 'formula'
 
-class allolib < Formula
+class Allolib < Formula
   head 'https://github.com/AlloSphere-Research-Group/allolib', :branch => "devel"
 
   depends_on 'cmake' => :build
@@ -12,8 +12,12 @@ class allolib < Formula
   depends_on 'libsndfile'
 
   def install
-    system "cmake", ".", "-DNO_EXAMPLES=1", *std_cmake_args
-    system "make"
-    system "make install"
+    system "git submodule init"
+    system "git submodule update"
+    mkdir "build" do
+      system "cmake", "..", "-DNO_EXAMPLES=1", *std_cmake_args
+      system "make al"
+      system "make install"
+   end
   end
 end
