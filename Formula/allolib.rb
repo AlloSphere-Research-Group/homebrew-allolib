@@ -12,8 +12,6 @@ class Allolib < Formula
   depends_on 'libsndfile'
 
   def install
-    system "git submodule init"
-    system "git submodule update"
     mkdir "build" do
       system "cmake", "..", "-DNO_EXAMPLES=1", *std_cmake_args
       system "make al"
