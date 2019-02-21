@@ -19,7 +19,7 @@ class Allolib < Formula
   def install
     mkdir "build" do
       system "cmake", "..", "-DNO_EXAMPLES=1", *std_cmake_args
-      system "make", "al", "-j16"
+      system "make", "al"
       system "make", "install"
     end
 
