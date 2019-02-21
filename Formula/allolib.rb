@@ -13,12 +13,22 @@ class Allolib < Formula
 
   def install
     mkdir "build" do
-    system "cmake", "..", "-DNO_EXAMPLES=1", "-DCMAKE_INSTALL_PREFIX=#{prefix}", *std_cmake_args
-    system "make", "al"
-    system "make", "install"
+      system "cmake", "..", "-DNO_EXAMPLES=1", *std_cmake_args
+      system "make", "al"
+      system "make", "install"
     end
+
+    lib.install Dir["al/lib/libal.a"]
+    lib.install Dir["al/lib/libGamma.a"]
+    include.install Dir["al/include/al"]
 
     test do
     end
+  end
+
+  def uninstall
+    lib.uninstall Dir["al/lib/libal.a"]
+    lib.uninstall Dir["al/lib/libGamma.a"]
+    include.uninstall Dir["al/include/al"]
   end
 end
