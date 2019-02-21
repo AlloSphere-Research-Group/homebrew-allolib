@@ -12,7 +12,7 @@ class Gamma < Formula
     system "make", "Gamma"
 
     lib.install Dir["build/lib/libGamma.a"]
-    include.install Dir["build/include/Gamma"]
+    include.install Dir["Gamma"]
 
     test do
     end
@@ -20,6 +20,6 @@ class Gamma < Formula
 
   def uninstall
     lib.uninstall Dir["build/lib/libGamma.a"]
-    include.install Dir["build/include/Gamma"]
+    include.uninstall Dir["Gamma"]
   end
 end
