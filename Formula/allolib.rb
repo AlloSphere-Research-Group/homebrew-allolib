@@ -13,7 +13,7 @@ class Allolib < Formula
 
   def install
     mkdir "build" do
-    system "cmake", "..", "-DNO_EXAMPLES=1", *std_cmake_args
+    system "cmake", "..", "-DNO_EXAMPLES=1", "-DCMAKE_INSTALL_PREFIX=#{prefix}", *std_cmake_args
     system "make", "al"
     system "make", "install"
     end
