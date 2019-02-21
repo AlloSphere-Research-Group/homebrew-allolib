@@ -14,7 +14,7 @@ class Allolib < Formula
   depends_on "rt-audio"
   depends_on "rtmidi"
   depends_on "portaudio"
-  depends_on "fftw3"
+  depends_on "fftw"
 
   def install
     mkdir "build" do
