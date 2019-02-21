@@ -4,6 +4,7 @@ class Allolib < Formula
   head "https://github.com/akshay1992/allolib.git"
 
   depends_on "cmake" => :build
+  depends_on "Gamma"
   depends_on "assimp"
   depends_on "freeimage"
   depends_on "freetype"
