@@ -1,7 +1,7 @@
 class Allolib < Formula
   desc "AlloSystem for OpenGL 3.3 or higher"
   homepage "https://github.com/AlloSphere-Research-Group/allolib"
-  head "https://github.com/akshay1992/allolib", :revision => "afa8e92203cda2c110d724b401cdfd9b6387204e"
+  head "https://github.com/akshay1992/allolib.git"
 
   depends_on "cmake" => :build
   depends_on "assimp"
