@@ -1,9 +1,10 @@
 class Allolib < Formula
   desc "AlloSystem for OpenGL 3.3 or higher"
   homepage "https://github.com/AlloSphere-Research-Group/allolib"
-  head "https://github.com/akshay1992/allolib.git"
+  head "https://github.com/AlloSphere-Research-Group/allolib.git"
 
   depends_on "cmake" => :build
+  depends_on "apr"
   depends_on "Gamma"
   depends_on "assimp"
   depends_on "freeimage"
@@ -20,7 +21,6 @@ class Allolib < Formula
     end
 
     lib.install Dir["al/lib/libal.a"]
-    lib.install Dir["al/lib/libGamma.a"]
     include.install Dir["al/include/al"]
 
     test do
@@ -29,7 +29,6 @@ class Allolib < Formula
 
   def uninstall
     lib.uninstall Dir["al/lib/libal.a"]
-    lib.uninstall Dir["al/lib/libGamma.a"]
     include.uninstall Dir["al/include/al"]
   end
 end
